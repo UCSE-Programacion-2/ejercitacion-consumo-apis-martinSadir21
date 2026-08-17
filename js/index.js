@@ -39,6 +39,25 @@ cargarUsuario();
 
 function renderizarDatosUsuario(datos) {
   // Escribe aquí tu código para mostrar la foto, nombre completo e email en div.tarjeta
+  function renderizarDatosUsuario(datos) {
+  // 1. Obtenemos el primer usuario del arreglo 'results'
+  const usuario = datos.results[0];
+
+  // 2. Seleccionamos el contenedor HTML donde vamos a insertar los datos
+  const tarjeta = document.querySelector('.tarjeta');
+
+  // 3. Extraemos las propiedades que necesitamos
+  const fotoPerfil = usuario.picture.large;
+  const nombreCompleto = `${usuario.name.title} ${usuario.name.first} ${usuario.name.last}`;
+  const correo = usuario.email;
+
+  // 4. Insertamos los elementos en la tarjeta usando innerHTML y Template Strings
+  tarjeta.innerHTML = `
+    <img src="${fotoPerfil}" alt="Foto de ${nombreCompleto}">
+    <h2>${nombreCompleto}</h2>
+    <p>${correo}</p>
+  `;
+}
 }
 
 /* -------------------------------- CONSIGNA 2 -------------------------------- */
