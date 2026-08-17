@@ -3,6 +3,25 @@
 /* -------------------------------- CONSIGNA 1 -------------------------------- */
 // 1. Realizar una petición a la API de usuarios utilizando fetch().
 //    URL: http://localhost:3000/api/user  (iniciar antes con npm start)
+
+async function cargarUsuario() {
+  try {
+    // 1.petición a la API
+    const response = await fetch('http://localhost:3000/api/user');
+    
+    // 2.respuesta a JSON
+    const datos = await response.json();
+    
+    // 3.atos a la función que los va a renderizar en el HTML
+    renderizarDatosUsuario(datos);
+    
+  } catch (error) {
+    console.error("Error al obtener los datos de la API:", error);
+  }
+}
+
+// Llamamos a la función para que se ejecute apenas carga la página
+cargarUsuario();
 // 2. Al recibir la respuesta, convertirla a JSON con response.json().
 // 3. Invocar renderizarDatosUsuario() pasándole el objeto JSON completo.
 
