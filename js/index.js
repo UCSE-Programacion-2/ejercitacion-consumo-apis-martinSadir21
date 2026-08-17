@@ -24,7 +24,7 @@ function renderizarDatosUsuario(datos) {
 
 
 /* -------------------------------- CONSIGNA 2 -------------------------------- */
-// Función encargada de pedir los datos a la API
+// Función encargada de pedir los datos a la API a
 async function cargarUsuario() {
   try {
     // 1. Petición a la API
